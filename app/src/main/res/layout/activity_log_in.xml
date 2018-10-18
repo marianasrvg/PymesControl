@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityLogIn"
+    android:orientation="vertical"
+    android:padding="20dp">
+    
+    <EditText
+        android:id="@+id/log_in_correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/log_in_pswd"
+        android:hint="@string/am_correo"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:id="@+id/log_in_pswd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="@string/am_pwd"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/log_in_btn_ingresar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/log_in_pswd"
+        android:text="@string/am_ingresar"
+        android:textAllCaps="false"
+        android:background="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/am_leyenda"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/am_d_leyenda"
+        android:layout_gravity="bottom"/>
+
+</RelativeLayout>
