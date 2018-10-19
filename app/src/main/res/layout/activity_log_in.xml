@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/log_in_pswd"
-        android:hint="@string/am_correo"
+        android:hint="@string/al_correo"
         android:inputType="textEmailAddress"/>
 
     <EditText
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:hint="@string/am_pwd"
+        android:hint="@string/al_pwd"
         android:inputType="textPassword"/>
 
     <Button
@@ -29,15 +29,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/log_in_pswd"
-        android:text="@string/am_ingresar"
+        android:text="@string/al_ingresar"
         android:textAllCaps="false"
         android:background="@color/colorPrimary"/>
 
     <TextView
+        android:id="@+id/log_in_leyenda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/am_leyenda"
+        android:text="@string/al_leyenda"
         android:textColor="@android:color/darker_gray"
         android:textSize="@dimen/am_d_leyenda"
         android:layout_gravity="bottom"/>

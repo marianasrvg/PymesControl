@@ -1,10 +1,13 @@
 <resources>
     <string name="app_name">PymesControl</string>
-    <string name="am_correo">Correo</string>
-    <string name="am_pwd">Contraseña</string>
-    <string name="am_ingresar">Ingresar</string>
-    <string name="am_leyenda">PymesControl 2018 - Sistema de facturación en línea v1.0.0</string>
+    <string name="al_correo">Correo</string>
+    <string name="al_pwd">Contraseña</string>
+    <string name="al_ingresar">Ingresar</string>
+    <string name="al_leyenda">PymesControl 2018 - Sistema de facturación en línea v1.0.0</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nav_facturas">Facturas</string>
+    <string name="nav_cotizaciones">Cotizaciones</string>
+    <string name="nav_catalogos">Catalogos</string>
 </resources>
