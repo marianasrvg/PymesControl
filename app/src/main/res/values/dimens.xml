@@ -10,6 +10,7 @@
     <dimen name="factura_card_padding_top">4dp</dimen>
     <dimen name="factura_card_padding_top_title">1dp</dimen>
     <dimen name="factura_card_padding_top_detail">1dp</dimen>
-    <dimen name="factura_card_layout_margin">0.1dp</dimen>
+    <dimen name="factura_card_layout_margin">0.2dp</dimen>
+    <dimen name="factura_card_icon">20dp</dimen>
 
 </resources>
