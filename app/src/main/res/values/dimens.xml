@@ -7,11 +7,15 @@
 
     <dimen name="factura_card_size">75dp</dimen>
     <dimen name="factura_card_padding_left">20dp</dimen>
-    <dimen name="factura_card_padding_top">4dp</dimen>
+    <dimen name="factura_card_padding_top">6dp</dimen>
+    <dimen name="factura_card_padding_bottom">8dp</dimen>
     <dimen name="factura_card_padding_top_title">1dp</dimen>
     <dimen name="factura_card_padding_top_detail">1dp</dimen>
     <dimen name="factura_card_layout_margin">0.2dp</dimen>
-    <dimen name="factura_card_icon">20dp</dimen>
+    <dimen name="factura_card_icon">16dp</dimen>
+
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_normal">16sp</dimen>
 
     <dimen name="app_bar_simple_height">80dp</dimen>
 
