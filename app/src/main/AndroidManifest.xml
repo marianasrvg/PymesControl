@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".ActivityLogIn" />
         <activity android:name=".item_facturas" />
-        <activity android:name=".Factura"></activity>
+        <activity android:name=".Factura" />
+        <activity android:name=".AdapterCotizaciones"></activity>
     </application>
 
 </manifest>
