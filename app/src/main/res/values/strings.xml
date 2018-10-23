@@ -10,4 +10,14 @@
     <string name="nav_facturas">Facturas</string>
     <string name="nav_cotizaciones">Cotizaciones</string>
     <string name="nav_catalogos">Catalogos</string>
+
+    <string name="factura_card">A 15</string>
+    <string name="factura_card_status">Timbrada</string>
+    <string name="factura_card_nombre">Nombre</string>
+    <string name="factura_card_fecha">Fecha</string>
+    <string name="factura_card_num">XAXX01010100</string>
+
+
+
+
 </resources>

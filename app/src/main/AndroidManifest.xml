@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ActivityLogIn" />
+        <activity android:name=".item_facturas" />
+        <activity android:name=".Factura"></activity>
     </application>
 
 </manifest>
