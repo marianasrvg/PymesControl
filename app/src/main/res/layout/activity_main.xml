@@ -5,14 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ActivityMain">
-
+    <include
+        android:id="@+id/activity_main_app_bar_simple"
+        layout="@layout/app_bar_simple">
+    </include>
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/main_nav"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorPrimary"
+        app:itemBackground="@drawable/bottom_menu_background"
         app:itemIconTint="@color/nav_item_colors"
         app:itemTextColor="@color/nav_item_colors"
         app:menu="@menu/navigation_items">
@@ -23,9 +26,8 @@
         android:id="@+id/main_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/main_nav"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:layout_below="@id/activity_main_app_bar_simple"
+        android:layout_above="@id/main_nav">
 
     </FrameLayout>
 

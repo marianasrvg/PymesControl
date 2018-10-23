@@ -48,10 +48,18 @@ public class FragmentFacturas extends Fragment {
 
         Date date = new Date();
         facturas = new ArrayList<>();
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A15","XA00AX",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A15","XA00AX",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A15","XA00AX",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A15","XA00AX",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A15","XAXX01010100",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A16","XAXX01010100",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A17","XAXX01010100",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A18","XAXX01010100",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A19","XAXX01010100",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A20","XAXX01010100",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A21","XAXX01010100",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A22","XAXX01010100",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A23","XAXX01010100",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A24","XAXX01010100",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A25","XAXX01010100",date));
+        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A26","XAXX01010100",date));
 
         adapterFacturas = new AdapterFacturas(Constant.FRAGMENT_FACTURAS, getActivity(), facturas);
         recyclerView.setAdapter(adapterFacturas);

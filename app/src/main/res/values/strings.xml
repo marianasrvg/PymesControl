@@ -17,5 +17,6 @@
     <string name="factura_card_fecha">Fecha</string>
     <string name="factura_card_num">XAXX01010100</string>
 
+    <string name="app_bar_menu_logout">Logout</string>
 
 </resources>
