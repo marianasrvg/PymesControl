@@ -6,14 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/factura_card_size"
     android:scrollbarStyle="outsideOverlay"
-    android:layout_margin="@dimen/factura_card_layout_margin">
+    android:layout_margin="@dimen/factura_card_layout_margin"
+    app:cardElevation="0dp">
     
     <RelativeLayout
         android:id="@+id/factura_item_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="@dimen/factura_card_padding_left"
-        android:paddingTop="@dimen/factura_card_padding_top">
+        android:paddingTop="@dimen/factura_card_padding_top"
+        android:background="@drawable/card_view_background">
 
         <LinearLayout
             android:id="@+id/factura_title"

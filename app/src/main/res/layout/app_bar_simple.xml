@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app_bar_simple_height"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/app_bar_simple_background"
+    app:titleTextColor="@color/colorDarkBlue"
+    style="@style/AppBarSimple"
+    app:titleTextAppearance="@style/AppBarSimpleTitle">
+</android.support.v7.widget.Toolbar>

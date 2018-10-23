@@ -2,10 +2,14 @@ package com.example.mari_.pymescontrol;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
@@ -26,7 +30,9 @@ public class ActivityMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.activity_main_app_bar_simple);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(R.string.nav_facturas);
         mainNavigationView = findViewById(R.id.main_nav);
         mainFrameLayout = findViewById(R.id.main_frame_layout);
 
@@ -41,14 +47,17 @@ public class ActivityMain extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.nav_facturas:
+                        getSupportActionBar().setTitle(R.string.nav_facturas);
                         setFragment(fragmentFacturas);
                         return true;
 
                     case R.id.nav_cotizaciones:
+                        getSupportActionBar().setTitle(R.string.nav_cotizaciones);
                         setFragment(fragmentCotizaciones);
                         return true;
 
                     case R.id.nav_catalogos:
+                        getSupportActionBar().setTitle(R.string.nav_catalogos);
                         setFragment(fragmentCatalogos);
                         return true;
 
@@ -57,9 +66,25 @@ public class ActivityMain extends AppCompatActivity {
                 }
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.app_bar_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.app_bar_logout:
+                Intent intent = new Intent(ActivityMain.this, ActivityLogIn.class);
+                startActivity(intent);
+                finish();
+                return true;
         }
-
+        return false;
+    }
     private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_frame_layout, fragment);

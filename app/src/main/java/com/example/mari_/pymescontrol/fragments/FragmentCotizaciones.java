@@ -51,7 +51,15 @@ public class FragmentCotizaciones extends Fragment {
         cotizaciones.add(new Cotizacion(1, "Cotizacion prueba", "Mariana Sierra", date));
         cotizaciones.add(new Cotizacion(2, "Cotizacion prueba", "Mariana Sierra", date));
         cotizaciones.add(new Cotizacion(3, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(4, "Cotizacion prueba", "Mariana Sierra", date));
+        cotizaciones.add(new Cotizacion(5, "Cotizacion prueba", "Mariana Sierra", date));
+        cotizaciones.add(new Cotizacion(6, "Cotizacion prueba", "Mariana Sierra", date));
+        cotizaciones.add(new Cotizacion(7, "Cotizacion prueba", "Mariana Sierra", date));
+        cotizaciones.add(new Cotizacion(8, "Cotizacion prueba", "Mariana Sierra", date));
+        cotizaciones.add(new Cotizacion(9, "Cotizacion prueba", "Mariana Sierra", date));
+        cotizaciones.add(new Cotizacion(10, "Cotizacion prueba", "Mariana Sierra", date));
+        cotizaciones.add(new Cotizacion(11, "Cotizacion prueba", "Mariana Sierra", date));
+        cotizaciones.add(new Cotizacion(12, "Cotizacion prueba", "Mariana Sierra", date));
+        cotizaciones.add(new Cotizacion(13, "Cotizacion prueba", "Mariana Sierra", date));
 
         adapterCotizaciones = new AdapterCotizaciones(Constant.FRAGMENT_COTIZACIONES, getActivity(), cotizaciones);
         recyclerView.setAdapter(adapterCotizaciones);

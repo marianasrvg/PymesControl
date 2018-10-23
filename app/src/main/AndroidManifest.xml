@@ -9,17 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityMain">
+        <activity android:name=".ActivityMain"></activity>
+        <activity android:name=".ActivityLogIn" android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityLogIn" />
-        <activity android:name=".item_facturas" />
-        <activity android:name=".Factura" />
-        <activity android:name=".AdapterCotizaciones"></activity>
     </application>
 
 </manifest>
