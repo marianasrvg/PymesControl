@@ -1,0 +1,8 @@
+Proyecto de facturación
+Alan Pérez y Mariana Sierra
+
+Nombre de la app: PymesControl
+
+GITHUB: https://github.com/marianasrvg/PymesControl
+
+Prototipo: https://marvelapp.com/19a5a7ag/screen/47954126
