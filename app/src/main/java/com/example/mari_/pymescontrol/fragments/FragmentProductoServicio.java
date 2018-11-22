@@ -52,4 +52,8 @@ public class FragmentProductoServicio extends Fragment {
         adapterProdcutoServicio = new AdapterProdcutoServicio(Constant.FRAGMENT_PRODUCTOS_SERVICIOS, getActivity(), productoServicios);
         recyclerView.setAdapter(adapterProdcutoServicio);
     }
+
+    
+
+
 }
