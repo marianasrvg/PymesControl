@@ -6,31 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".ActivityLogIn"
     android:orientation="vertical"
-    android:background="@color/colorLightGray"
+    android:background="@color/colorMediumGrayBackground"
     android:padding="20dp">
     
     <EditText
         android:id="@+id/log_in_correo"
+        style="@style/input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/log_in_pswd"
         android:hint="@string/al_correo"
-        android:inputType="textEmailAddress"
-        android:background="@drawable/input_background"
-        android:padding="12dp"
-        android:textCursorDrawable="@drawable/cursor"/>
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/log_in_pswd"
+        style="@style/input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:hint="@string/al_pwd"
         android:inputType="textPassword"
-        android:background="@drawable/input_background"
-        android:padding="12dp"
-        android:layout_marginTop="10dp"
-        android:textCursorDrawable="@drawable/cursor"/>
+        android:layout_marginTop="10dp" />
 
     <Button
         android:id="@+id/login_btn"
@@ -44,7 +40,6 @@
         android:fontFamily="@font/open_sans_regular"
         android:layout_marginTop="10dp"
         android:textStyle="bold"/>
-
     <TextView
         android:id="@+id/log_in_leyenda"
         android:layout_width="wrap_content"
@@ -55,5 +50,4 @@
         android:textSize="@dimen/am_d_leyenda"
         android:layout_centerHorizontal="true"
         android:layout_gravity="bottom"/>
-
 </RelativeLayout>
