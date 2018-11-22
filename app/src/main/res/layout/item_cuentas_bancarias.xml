@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cuentas_bancarias_cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbarStyle="outsideOverlay"
+    android:layout_margin="@dimen/factura_card_layout_margin"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:id="@+id/c_b_item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/factura_card_padding_left"
+        android:paddingTop="@dimen/factura_card_padding_top"
+        android:paddingBottom="@dimen/factura_card_padding_bottom"
+        android:background="@drawable/card_view_background">
+
+        <LinearLayout
+            android:id="@+id/cuentas_bancarias_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/factura_card_padding_top_title">
+
+            <TextView
+                android:id="@+id/c_b_banco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Banco"
+                android:textStyle="bold"
+                android:layout_weight="0.05"
+                android:textSize="@dimen/text_normal"/>
+
+            <TextView
+                android:id="@+id/c_d_numerocuenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Numero de cuenta"
+                android:layout_weight="0.05"
+                android:textSize="@dimen/text_small"/>
+
+            <TextView
+                android:id="@+id/c_d_clabe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clabe"
+                android:layout_weight="0.9"
+                android:textSize="@dimen/text_small"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
