@@ -29,7 +29,7 @@ public class AdapterFacturas extends RecyclerView.Adapter<AdapterFacturas.ViewHo
         TextView fId;
         TextView fStatus;
         TextView fNombre;
-        TextView fNumero;
+        TextView fFolio;
         TextView fFecha;
 
         ViewHolder(View v){
@@ -37,7 +37,7 @@ public class AdapterFacturas extends RecyclerView.Adapter<AdapterFacturas.ViewHo
             fId = v.findViewById(R.id.factura_id);
             fStatus = v.findViewById(R.id.factura_status);
             fNombre = v.findViewById(R.id.factura_nombre);
-            fNumero = v.findViewById(R.id.factura_numero);
+            fFolio = v.findViewById(R.id.factura_rfc);
             fFecha = v.findViewById(R.id.factura_fecha);
         }
 
@@ -55,7 +55,7 @@ public class AdapterFacturas extends RecyclerView.Adapter<AdapterFacturas.ViewHo
         holder.fId.setText(facturaArrayList.get(holder.getAdapterPosition()).getId());
         holder.fStatus.setText(facturaArrayList.get(holder.getAdapterPosition()).getStatus());
         holder.fNombre.setText(facturaArrayList.get(holder.getAdapterPosition()).getNombre());
-        holder.fNumero.setText(facturaArrayList.get(holder.getAdapterPosition()).getNum());
+        holder.fFolio.setText(facturaArrayList.get(holder.getAdapterPosition()).getNum());
         DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
         String date = dateFormat.format(facturaArrayList.get(holder.getAdapterPosition()).getFecha());
         holder.fFecha.setText(date);

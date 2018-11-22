@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -25,6 +26,8 @@ public class ActivityMain extends AppCompatActivity {
     private FragmentFacturas fragmentFacturas;
     private FragmentCotizaciones fragmentCotizaciones;
     private FragmentCatalogos fragmentCatalogos;
+
+    private SwipeRefreshLayout fragmentFacturasRefresher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +93,6 @@ public class ActivityMain extends AppCompatActivity {
         fragmentTransaction.replace(R.id.main_frame_layout, fragment);
         fragmentTransaction.commit();
     }
-
 }
 
 

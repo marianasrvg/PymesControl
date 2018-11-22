@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp">
+    <ImageView
+        android:id="@+id/dialog_send_response_close"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/ic_close_black_24dp"
+        android:layout_alignParentRight="true"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_send_response_close"
+        android:padding="15dp"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_check_circle_green_24dp"
+            android:layout_gravity="center" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="@dimen/text_normal"
+            android:text="¡La factura se ha enviado correctamente!"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+</RelativeLayout>
