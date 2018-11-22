@@ -5,9 +5,9 @@
             <solid android:color="@color/colorWhite"></solid>
         </shape>
     </item>
-    <item android:gravity="bottom" android:height="1dp">
+    <item android:gravity="bottom" android:height=".5dp">
         <shape android:shape="rectangle">
-            <solid android:color="@color/colorLightGray"></solid>
+            <solid android:color="@color/colorLightGrayBorder"></solid>
         </shape>
     </item>
 </layer-list>

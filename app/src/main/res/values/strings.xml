@@ -14,7 +14,7 @@
     <string name="factura_card">A 15</string>
     <string name="factura_card_status">Timbrada</string>
     <string name="factura_card_nombre">Nombre</string>
-    <string name="factura_card_fecha">Fecha</string>
+    <string name="factura_card_fecha">26 de febrero de 2018</string>
     <string name="factura_card_num">XAXX01010100</string>
 
     <string name="app_bar_menu_logout">Logout</string>
