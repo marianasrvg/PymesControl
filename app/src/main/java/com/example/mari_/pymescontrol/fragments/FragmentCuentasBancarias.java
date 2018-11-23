@@ -11,11 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mari_.pymescontrol.AdapterCuentasBancarias;
-import com.example.mari_.pymescontrol.AdapterProdcutoServicio;
 import com.example.mari_.pymescontrol.R;
 import com.example.mari_.pymescontrol.beans.CuentaBancaria;
-import com.example.mari_.pymescontrol.beans.ProductoServicio;
 import com.example.mari_.pymescontrol.tools.Constant;
+import com.example.mari_.pymescontrol.tools.GetCalls;
+import com.example.mari_.pymescontrol.tools.HttpRequestResponse;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -50,10 +53,37 @@ public class FragmentCuentasBancarias extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
 
         cuentaBancarias = new ArrayList<>();
-        cuentaBancarias.add(new CuentaBancaria("Banamex", "xxxxxxxxx", "11.98"));
-        cuentaBancarias.add(new CuentaBancaria("Bancomer", "xxxxxxxxxxx", "11.98"));
-        cuentaBancarias.add(new CuentaBancaria("Santander", "xxxxxxxxx", "11.98"));
+
+        GetCalls.bancos(getActivity(), new HttpRequestResponse() {
+            @Override
+            public void onResponse(String response) {
+                if(response == "false") return;
+                try{
+                    JSONArray jsonObject = new JSONArray(response);
+                    for(int i = 0; i < jsonObject.length(); i++){
+                        JSONObject jsonCuentas = jsonObject.getJSONObject(i);
+                        cuentaBancarias.add(createCuentaBancaria(jsonCuentas));
+                    }
+                }catch (Exception e) {
+                    //TODO something here
+                }
+            }
+        });
+
         adapterCuentasBancarias = new AdapterCuentasBancarias(cuentaBancarias, getActivity(), Constant.FRAGMENT_CUENTA_BANCARIA);
         recyclerView.setAdapter(adapterCuentasBancarias);
+    }
+
+    private CuentaBancaria createCuentaBancaria(JSONObject jsonCuentas){
+        CuentaBancaria cuentaBancaria = null;
+        try{
+            String nombre = jsonCuentas.getString("nombre");
+            String nCuenta = jsonCuentas.getString("cuenta");
+            String clabe = jsonCuentas.getString("clabe");
+            cuentaBancaria = new CuentaBancaria(nombre, nCuenta, clabe);
+        }catch(Exception e){
+            //TODO something here
+        }
+        return cuentaBancaria;
     }
 }

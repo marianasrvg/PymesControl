@@ -13,7 +13,13 @@ import com.example.mari_.pymescontrol.AdapterCotizaciones;
 import com.example.mari_.pymescontrol.R;
 import com.example.mari_.pymescontrol.beans.Cotizacion;
 import com.example.mari_.pymescontrol.tools.Constant;
+import com.example.mari_.pymescontrol.tools.GetCalls;
+import com.example.mari_.pymescontrol.tools.HttpRequestResponse;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -46,24 +52,41 @@ public class FragmentCotizaciones extends Fragment {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
 
-        Date date = new Date();
         cotizaciones = new ArrayList<>();
-        cotizaciones.add(new Cotizacion(1, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(2, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(3, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(5, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(6, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(7, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(8, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(9, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(10, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(11, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(12, "Cotizacion prueba", "Mariana Sierra", date));
-        cotizaciones.add(new Cotizacion(13, "Cotizacion prueba", "Mariana Sierra", date));
+
+        GetCalls.facturas(getActivity(), new HttpRequestResponse() {
+            @Override
+            public void onResponse(String response) {
+                if(response == "false") return;
+                try{
+                    JSONArray jsonObject = new JSONArray(response);
+                    for (int i = 0; i < jsonObject.length(); i++){
+                        JSONObject jsonCotizacion = jsonObject.getJSONObject(i);
+                        cotizaciones.add(createCotizacion(jsonCotizacion));
+                    }
+                }catch (Exception e){
+
+                }
+            }
+        });
 
         adapterCotizaciones = new AdapterCotizaciones(Constant.FRAGMENT_COTIZACIONES, getActivity(), cotizaciones);
         recyclerView.setAdapter(adapterCotizaciones);
     }
 
-
+    private Cotizacion createCotizacion(JSONObject jsonCotizacion){
+        Cotizacion cotizacion = null;
+        try{
+            int id = Integer.parseInt(jsonCotizacion.getString("id"));
+            String titulo = jsonCotizacion.getString("titulo");
+            String nombre = jsonCotizacion.getString("cliente");
+            String sDate = jsonCotizacion.getString("fecha");
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+            Date date = formatter.parse(sDate);
+            cotizacion = new Cotizacion(id, titulo, nombre, date);
+        }catch(Exception e){
+            //TODO something with exception
+        }
+        return cotizacion;
+    }
 }

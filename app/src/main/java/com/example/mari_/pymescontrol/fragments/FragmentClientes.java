@@ -1,7 +1,6 @@
 package com.example.mari_.pymescontrol.fragments;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +14,11 @@ import com.example.mari_.pymescontrol.AdapterCliente;
 import com.example.mari_.pymescontrol.R;
 import com.example.mari_.pymescontrol.beans.Cliente;
 import com.example.mari_.pymescontrol.tools.Constant;
+import com.example.mari_.pymescontrol.tools.GetCalls;
+import com.example.mari_.pymescontrol.tools.HttpRequestResponse;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -49,10 +53,37 @@ public class FragmentClientes extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
 
         clienteArrayList = new ArrayList<>();
-        clienteArrayList.add(new Cliente("Mariana Sierra Vega", "RFC", "Razon social"));
-        clienteArrayList.add(new Cliente("Alan Perez", "RFC", "Razon social"));
-        clienteArrayList.add(new Cliente("Mariana Sierra Vega", "RFC", "Razon social"));
+
+        GetCalls.clientes(getActivity(), new HttpRequestResponse() {
+            @Override
+            public void onResponse(String response) {
+                if(response == "false") return;
+                try {
+                    JSONArray jsonObject = new JSONArray(response);
+                    for(int i = 0; i < jsonObject.length(); i++){
+                        JSONObject jsonClient = jsonObject.getJSONObject(i);
+                        clienteArrayList.add(createCliente(jsonClient));
+                    }
+                }catch(Exception e){
+                    //TODO something e
+                }
+            }
+        });
+
         adapterCliente = new AdapterCliente(clienteArrayList, getActivity(), Constant.FRAGMENT_CLIENTE);
         recyclerView.setAdapter(adapterCliente);
+    }
+
+    private Cliente createCliente(JSONObject jsonClient){
+        Cliente cliente = null;
+        try{
+            String nombre = jsonClient.getString("nombre");
+            String rfc = jsonClient.getString("rfc");
+            String razonSocial = jsonClient.getString("nombre");
+            cliente = new Cliente(nombre, rfc, razonSocial);
+        }catch(Exception e){
+            //TODO something e
+        }
+        return cliente;
     }
 }

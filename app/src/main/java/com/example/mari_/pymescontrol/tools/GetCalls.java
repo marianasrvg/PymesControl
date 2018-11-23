@@ -36,7 +36,7 @@ public class GetCalls {
     }
 
     public static void bancos(Context context, HttpRequestResponse requestResponse){
-        HttpRequest.get(context, "http://api.pymescontrol.com/bancos", requestResponse);
+        HttpRequest.get(context, "http://api.pymescontrol.com/cuentasBancarias", requestResponse);
     }
 
     public static void banco(Context context, HttpRequestResponse requestResponse, int bancoId){
