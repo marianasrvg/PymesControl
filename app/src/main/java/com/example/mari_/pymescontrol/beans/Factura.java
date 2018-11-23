@@ -6,25 +6,29 @@ import android.os.Parcelable;
 import java.util.Date;
 
 public class Factura implements Parcelable {
-    private String nombre, status, id, num;
+    private String id, serie, folio, nombre, status, rfc;
     private Date fecha;
 
     public Factura() {
     }
 
-    public Factura(String nombre, String status, String id, String num, Date fecha) {
+    public Factura(String id, String serie, String folio, String nombre, String status, String rfc, Date fecha) {
+        this.id = id;
+        this.serie = serie;
+        this.folio = folio;
         this.nombre = nombre;
         this.status = status;
-        this.id = id;
-        this.num = num;
+        this.rfc = rfc;
         this.fecha = fecha;
     }
 
     protected Factura(Parcel in) {
+        id = in.readString();
+        serie = in.readString();
+        folio = in.readString();
         nombre = in.readString();
         status = in.readString();
-        id = in.readString();
-        num = in.readString();
+        rfc = in.readString();
     }
 
     public static final Creator<Factura> CREATOR = new Creator<Factura>() {
@@ -39,12 +43,12 @@ public class Factura implements Parcelable {
         }
     };
 
-    public String getNum() {
-        return num;
+    public String getRfc() {
+        return rfc;
     }
 
-    public void setNum(String num) {
-        this.num = num;
+    public void setRfc(String num) {
+        this.rfc = rfc;
     }
 
     public String getNombre() {
@@ -79,13 +83,31 @@ public class Factura implements Parcelable {
         this.fecha = fecha;
     }
 
+    public String getSerie() {
+        return serie;
+    }
+
+    public void setSerie(String serie) {
+        this.serie = serie;
+    }
+
+    public String getFolio() {
+        return folio;
+    }
+
+    public void setFolio(String folio) {
+        this.folio = folio;
+    }
+
     @Override
     public String toString() {
         return "Factura{" +
-                "nombre='" + nombre + '\'' +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", serie='" + serie + '\'' +
+                ", folio='" + folio + '\'' +
                 ", status='" + status + '\'' +
-                ", id='" + id + '\'' +
-                ", num='" + num + '\'' +
+                ", rfc='" + rfc + '\'' +
                 ", fecha=" + fecha +
                 '}';
     }
@@ -97,9 +119,11 @@ public class Factura implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(id);
+        parcel.writeString(serie);
+        parcel.writeString(folio);
         parcel.writeString(nombre);
         parcel.writeString(status);
-        parcel.writeString(id);
-        parcel.writeString(num);
+        parcel.writeString(rfc);
     }
 }

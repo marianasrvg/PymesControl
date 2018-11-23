@@ -11,12 +11,12 @@ import com.example.mari_.pymescontrol.beans.ProductoServicio;
 
 import java.util.ArrayList;
 
-public class AdapterProdcutoServicio extends RecyclerView.Adapter<AdapterProdcutoServicio.ViewHolder> {
+public class AdapterProductoServicio extends RecyclerView.Adapter<AdapterProductoServicio.ViewHolder>{
     private ArrayList<ProductoServicio> productoServiciosList;
     private Context context;
     private int fragment;
 
-    public AdapterProdcutoServicio(int fragment, Context context, ArrayList<ProductoServicio> productoServicios){
+    public AdapterProductoServicio(int fragment, Context context, ArrayList<ProductoServicio> productoServicios){
         this.context = context;
         this.fragment = fragment;
         this.productoServiciosList = productoServicios;
@@ -31,9 +31,9 @@ public class AdapterProdcutoServicio extends RecyclerView.Adapter<AdapterProdcut
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.psTitle.setText(productoServiciosList.get(holder.getAdapterPosition()).getTitle());
-        holder.psDescription.setText(productoServiciosList.get(holder.getAdapterPosition()).getDescrption());
-        holder.psPrice.setText(productoServiciosList.get(holder.getAdapterPosition()).getPrice().toString());
+        holder.psCodigo.setText(productoServiciosList.get(holder.getAdapterPosition()).getCodigo());
+        holder.psDescripcion.setText(productoServiciosList.get(holder.getAdapterPosition()).getDescripcion());
+        holder.psPrecio.setText("$"+productoServiciosList.get(holder.getAdapterPosition()).getPrecio().toString());
     }
 
     @Override
@@ -42,15 +42,15 @@ public class AdapterProdcutoServicio extends RecyclerView.Adapter<AdapterProdcut
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView psTitle;
-        TextView psDescription;
-        TextView psPrice;
+        TextView psCodigo;
+        TextView psDescripcion;
+        TextView psPrecio;
 
         ViewHolder(View v){
             super(v);
-            psTitle = v.findViewById(R.id.p_s_title);
-            psDescription = v.findViewById(R.id.p_s_description);
-            psPrice = v.findViewById(R.id.p_s_price);
+            psCodigo = v.findViewById(R.id.p_s_codigo);
+            psDescripcion = v.findViewById(R.id.p_s_descripcion);
+            psPrecio = v.findViewById(R.id.p_s_precio);
         }
     }
 }

@@ -31,7 +31,7 @@ public class HttpRequest {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String>  params = new HashMap<String, String>();
-                params.put("Cookie", "token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdWVudGFJZCI6IjEiLCJub21icmVzIjoiQWxhbiIsImFwZWxsaWRvcyI6IlBcdTAwZTlyZXoiLCJjdWVudGFUaXBvIjoiMSIsImVtcHJlc2FJZCI6IjEiLCJlbXByZXNhSWROYW1lIjoiYW51bm93IiwibGltaXQiOiIyMDE4LTExLTIyIDA1OjQ0OjE0IiwiaXBVc3VhcmlvIjoiMTc3LjI0MC4xMDEuMTI2In0.UQ5ED4QreRSCU87gDe8yObhJR2Drd5EZqOy8PXGTGPY");
+                params.put("Cookie", "token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdWVudGFJZCI6IjEiLCJub21icmVzIjoiQWxhbiIsImFwZWxsaWRvcyI6IlBcdTAwZTlyZXoiLCJjdWVudGFUaXBvIjoiMSIsImVtcHJlc2FJZCI6IjEiLCJlbXByZXNhSWROYW1lIjoiYW51bm93IiwibGltaXQiOiIyMDE4LTExLTIzIDA3OjQwOjM1IiwiaXBVc3VhcmlvIjoiMTc3LjI0MC4xMDEuMTI2In0.ZS_Uypr-Ns-2jCGOBjAPZVdaOYLVBA6P7XRroTfQZbQ");
                 return params;
             }
         };

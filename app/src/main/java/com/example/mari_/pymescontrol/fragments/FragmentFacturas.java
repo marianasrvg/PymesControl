@@ -3,6 +3,8 @@ package com.example.mari_.pymescontrol.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -24,10 +26,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class FragmentFacturas extends Fragment {
-   RecyclerView recyclerView;
-   ArrayList<Factura> facturas;
-   AdapterFacturas adapterFacturas;
-
+    private RecyclerView recyclerView;
+    private ArrayList<Factura> facturas;
+    private AdapterFacturas adapterFacturas;
+    private SwipeRefreshLayout swipeRefresh;
     public FragmentFacturas() {
 
     }
@@ -39,55 +41,69 @@ public class FragmentFacturas extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_fragment_facturas, container, false);
         recyclerView = rootView.findViewById(R.id.fragment_factura_recycler);
-
+        swipeRefresh = rootView.findViewById(R.id.fragment_factura_refresher);
         return rootView;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
+        facturas = new ArrayList<>();
+        adapterFacturas = new AdapterFacturas(Constant.FRAGMENT_FACTURAS, getActivity(), facturas);
+        recyclerView.setAdapter(adapterFacturas);
+        swipeRefresh.setColorSchemeColors(ContextCompat.getColor(getContext(),R.color.colorLightBlue));
+        swipeRefresh.setRefreshing(true);
+        loadData();
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadData();
+            }
+        });
+    }
 
+    private Factura createFactura(JSONObject jsonFactura){
+        try{
+            String id = jsonFactura.getString("id");
+            String serie = jsonFactura.getString("serie");
+            String folio = jsonFactura.getString("folio");
+            String nombre = jsonFactura.getString("nombre");
+            String estado = jsonFactura.getString("estado");
+            String rfc = jsonFactura.getString("rfc");
+            String sDate = jsonFactura.getString("fechaTimbre");
+            Date date = null;
+            if(sDate != "null") {
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                date = formatter.parse(sDate);
+            }
+            return new Factura(id, serie, folio, nombre, estado, rfc ,date);
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    private void loadData(){
         facturas = new ArrayList<>();
         GetCalls.facturas(getActivity(), new HttpRequestResponse() {
             @Override
             public void onResponse(String response) {
-                if(response == "false") return;;
+                if(response == "false") return;
                 try{
                     JSONArray jsonObject = new JSONArray(response);
                     for(int i = 0; i < jsonObject.length(); i++){
                         JSONObject jsonFactura = jsonObject.getJSONObject(i);
-                        facturas.add(createFactura(jsonFactura));
+                        Factura f = createFactura(jsonFactura);
+                        facturas.add(f);
                     }
-                }catch(Exception e){
-                    //TODO something e
-                }
+                }catch(Exception e){ }
+                adapterFacturas = new AdapterFacturas(Constant.FRAGMENT_FACTURAS, getActivity(), facturas);
+                recyclerView.setAdapter(adapterFacturas);
+                swipeRefresh.setRefreshing(false);
             }
         });
-
-        adapterFacturas = new AdapterFacturas(Constant.FRAGMENT_FACTURAS, getActivity(), facturas);
-        recyclerView.setAdapter(adapterFacturas);
-    }
-
-    private Factura createFactura(JSONObject jsonFactura){
-        Factura factura = null;
-        try{
-            String nombre = jsonFactura.getString("nombre");
-            String estado = jsonFactura.getString("estado");
-            String status = estado == "1" ? "Timbrado":"No timbrado";
-            String id = jsonFactura.getString("id");
-            String num = jsonFactura.getString("rfc");
-            String sDate = jsonFactura.getString("fechaTimbre");
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-            Date date = formatter.parse(sDate);
-            factura = new Factura(nombre,status,id,num,date);
-        }catch (Exception e){
-            //TODO something e
-        }
-        return factura;
     }
 
 

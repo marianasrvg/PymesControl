@@ -27,14 +27,14 @@ public class AdapterCotizaciones extends RecyclerView.Adapter<AdapterCotizacione
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView cId;
+        TextView cFolio;
         TextView cTitulo;
         TextView cNombre;
         TextView cFecha;
 
         ViewHolder(View v){
             super(v);
-            cId = v.findViewById(R.id.cotizacion_num);
+            cFolio = v.findViewById(R.id.cotizacion_folio);
             cTitulo = v.findViewById(R.id.cotizacion_titulo);
             cNombre = v.findViewById(R.id.cotizacion_nombre);
             cFecha = v.findViewById(R.id.cotizacion_fecha);
@@ -50,8 +50,7 @@ public class AdapterCotizaciones extends RecyclerView.Adapter<AdapterCotizacione
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        int id = cotizacionArrayList.get(holder.getAdapterPosition()).getId();
-        holder.cId.setText(String.valueOf(id));
+        holder.cFolio.setText(cotizacionArrayList.get(holder.getAdapterPosition()).getFolio());
         holder.cTitulo.setText(cotizacionArrayList.get(holder.getAdapterPosition()).getTitulo());
         holder.cNombre.setText(cotizacionArrayList.get(holder.getAdapterPosition()).getNombre());
         DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");

@@ -41,9 +41,9 @@ public class FragmentCatalogos extends Fragment {
 
     private void setUpViewPager(ViewPager viewPager) {
         SectionPageAdapter adapter = new SectionPageAdapter(getChildFragmentManager());
-        adapter.addFragment(new FragmentProductoServicio(), "Productos y servicios");
-        adapter.addFragment(new FragmentClientes(), "Clientes");
-        adapter.addFragment(new FragmentCuentasBancarias(), "Cuentas bancarias");
+        adapter.addFragment(new FragmentProductoServicio(), getString(R.string.frag_pys));
+        adapter.addFragment(new FragmentClientes(), getString(R.string.frag_clientes));
+        adapter.addFragment(new FragmentCuentasBancarias(), getString(R.string.frag_cuantas_bancarias));
         viewPager.setAdapter(adapter);
     }
 
