@@ -1,7 +1,6 @@
 package com.example.mari_.pymescontrol.fragments;
 
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,7 +13,13 @@ import com.example.mari_.pymescontrol.AdapterFacturas;
 import com.example.mari_.pymescontrol.R;
 import com.example.mari_.pymescontrol.beans.Factura;
 import com.example.mari_.pymescontrol.tools.Constant;
+import com.example.mari_.pymescontrol.tools.GetCalls;
+import com.example.mari_.pymescontrol.tools.HttpRequestResponse;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -46,23 +51,43 @@ public class FragmentFacturas extends Fragment {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
 
-        Date date = new Date();
         facturas = new ArrayList<>();
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A15","XAXX01010100",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A16","XAXX01010100",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A17","XAXX01010100",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A18","XAXX01010100",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A19","XAXX01010100",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A20","XAXX01010100",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A21","XAXX01010100",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A22","XAXX01010100",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A23","XAXX01010100",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A24","XAXX01010100",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A25","XAXX01010100",date));
-        facturas.add(new Factura("Mariana Sierra", "Timbrado", "A26","XAXX01010100",date));
+        GetCalls.facturas(getActivity(), new HttpRequestResponse() {
+            @Override
+            public void onResponse(String response) {
+                if(response == "false") return;;
+                try{
+                    JSONArray jsonObject = new JSONArray(response);
+                    for(int i = 0; i < jsonObject.length(); i++){
+                        JSONObject jsonFactura = jsonObject.getJSONObject(i);
+                        facturas.add(createFactura(jsonFactura));
+                    }
+                }catch(Exception e){
+                    //TODO something e
+                }
+            }
+        });
 
         adapterFacturas = new AdapterFacturas(Constant.FRAGMENT_FACTURAS, getActivity(), facturas);
         recyclerView.setAdapter(adapterFacturas);
+    }
+
+    private Factura createFactura(JSONObject jsonFactura){
+        Factura factura = null;
+        try{
+            String nombre = jsonFactura.getString("nombre");
+            String estado = jsonFactura.getString("estado");
+            String status = estado == "1" ? "Timbrado":"No timbrado";
+            String id = jsonFactura.getString("id");
+            String num = jsonFactura.getString("rfc");
+            String sDate = jsonFactura.getString("fechaTimbre");
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+            Date date = formatter.parse(sDate);
+            factura = new Factura(nombre,status,id,num,date);
+        }catch (Exception e){
+            //TODO something e
+        }
+        return factura;
     }
 
 

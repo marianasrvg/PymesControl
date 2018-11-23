@@ -14,6 +14,11 @@ import com.example.mari_.pymescontrol.AdapterProdcutoServicio;
 import com.example.mari_.pymescontrol.R;
 import com.example.mari_.pymescontrol.beans.ProductoServicio;
 import com.example.mari_.pymescontrol.tools.Constant;
+import com.example.mari_.pymescontrol.tools.GetCalls;
+import com.example.mari_.pymescontrol.tools.HttpRequestResponse;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -46,13 +51,39 @@ public class FragmentProductoServicio extends Fragment {
         recyclerView.setLayoutManager(mLayoutManager);
 
         productoServicios = new ArrayList<>();
-        productoServicios.add(new ProductoServicio("Nike", "Descripcion", 11.98));
-        productoServicios.add(new ProductoServicio("Nike", "Descripcion", 11.98));
-        productoServicios.add(new ProductoServicio("Nike", "Descripcion", 11.98));
+
+        GetCalls.productos(getActivity(), new HttpRequestResponse() {
+            @Override
+            public void onResponse(String response) {
+                if(response == "false") return;
+                try{
+                    JSONArray jsonObject = new JSONArray(response);
+                    for(int i = 0; i < jsonObject.length(); i++){
+                        JSONObject jsonProducto = jsonObject.getJSONObject(i);
+                        productoServicios.add(createProductoServicio(jsonProducto));
+                    }
+
+                }catch (Exception e){
+
+                }
+            }
+        });
+
         adapterProdcutoServicio = new AdapterProdcutoServicio(Constant.FRAGMENT_PRODUCTOS_SERVICIOS, getActivity(), productoServicios);
         recyclerView.setAdapter(adapterProdcutoServicio);
     }
 
+    private ProductoServicio createProductoServicio(JSONObject jsonProducto){
+        ProductoServicio productoServicio = null;
+        try{
+            String codigo = jsonProducto.getString("codigo");
+            String descripcion = jsonProducto.getString("descripcion");
+            Double precio = Double.parseDouble(jsonProducto.getString("total"));
+        }catch (Exception e){
+            //TODO something e
+        }
+        return productoServicio;
+    }
     
 
 

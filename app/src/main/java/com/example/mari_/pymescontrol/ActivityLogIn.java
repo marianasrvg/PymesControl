@@ -21,5 +21,7 @@ public class ActivityLogIn extends AppCompatActivity {
                 finish();
             }
         });
+        //DialogSend d = new DialogSend(this);
+        //d.show();
     }
 }
