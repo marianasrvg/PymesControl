@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog_productos_serivicios"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dialogs.DialogProductosServicios"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="@color/colorWhite">
+
+    <ImageView
+        android:id="@+id/dps_close"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/ic_close_black_24dp"
+        android:layout_alignParentRight="true"/>
+
+    <LinearLayout
+        android:id="@+id/dps_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dps_close"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/dps_codigo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Codigo"/>
+
+        <TextView
+            android:id="@+id/dps_codigoT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2"/>
+
+        <TextView
+            android:id="@+id/dps_descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+
+            android:text="Descripción"/>
+
+        <TextView
+            android:id="@+id/dps_descripcionT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2"/>
+
+        <TextView
+            android:id="@+id/dps_unidadmedida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+
+            android:text="Unidad de medida"/>
+
+        <TextView
+            android:id="@+id/dps_unidadmedidaT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Metro"/>
+
+        <TextView
+            android:id="@+id/dps_clavesat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+
+            android:text="Clave SAT"/>
+
+        <TextView
+            android:id="@+id/dps_clavesatT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="53111900"/>
+
+        <TextView
+            android:id="@+id/dps_preciosi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+
+            android:text="Precio sin impuestos"/>
+
+        <TextView
+            android:id="@+id/dps_preciosiT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Precio sin impuestos"/>
+
+        <TextView
+            android:id="@+id/dps_impuestos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+
+            android:text="Impuestos"/>
+
+        <TextView
+            android:id="@+id/dps_impuestosT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Impuestos"/>
+
+        <TextView
+            android:id="@+id/dps_precio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+
+            android:text="Precio neto"/>
+
+        <TextView
+            android:id="@+id/dps_precioT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$11.60"/>
+
+    </LinearLayout>
+</RelativeLayout>
