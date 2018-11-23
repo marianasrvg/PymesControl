@@ -4,34 +4,37 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ProductoServicio implements Parcelable {
-    String title, descrption;
-    Double price;
+    String id, codigo, descripcion;
+    Double precio;
 
-    public ProductoServicio(String title, String descrption, Double price) {
-        this.title = title;
-        this.descrption = descrption;
-        this.price = price;
+    public ProductoServicio(String id, String codigo, String descripcion, Double precio) {
+        this.id = id;
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.precio = precio;
     }
 
     protected ProductoServicio(Parcel in) {
-        title = in.readString();
-        descrption = in.readString();
+        id = in.readString();
+        codigo = in.readString();
+        descripcion = in.readString();
         if (in.readByte() == 0) {
-            price = null;
+            precio = null;
         } else {
-            price = in.readDouble();
+            precio = in.readDouble();
         }
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(title);
-        dest.writeString(descrption);
-        if (price == null) {
+        dest.writeString(id);
+        dest.writeString(codigo);
+        dest.writeString(descripcion);
+        if (precio == null) {
             dest.writeByte((byte) 0);
         } else {
             dest.writeByte((byte) 1);
-            dest.writeDouble(price);
+            dest.writeDouble(precio);
         }
     }
 
@@ -52,36 +55,45 @@ public class ProductoServicio implements Parcelable {
         }
     };
 
-    public String getTitle() {
-        return title;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getId() {
+        return id;
     }
 
-    public String getDescrption() {
-        return descrption;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setDescrption(String descrption) {
-        this.descrption = descrption;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
-    public Double getPrice() {
-        return price;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Double precio) {
+        this.precio = precio;
     }
 
     @Override
     public String toString() {
         return "ProductoServicio{" +
-                "title='" + title + '\'' +
-                ", descrption='" + descrption + '\'' +
-                ", price=" + price +
+                "id='" + id + '\'' +
+                ", codigo='" + codigo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", precio=" + precio +
                 '}';
     }
 }

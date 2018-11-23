@@ -26,10 +26,9 @@
             android:paddingBottom="@dimen/factura_card_padding_top_title">
 
             <TextView
-                android:id="@+id/cotizacion_num"
+                android:id="@+id/cotizacion_folio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/factura_card"
                 android:layout_weight="0.05"
                 android:textStyle="bold"
                 android:textSize="@dimen/text_normal"
@@ -48,7 +47,6 @@
                 android:id="@+id/cotizacion_titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/factura_card_status"
                 android:layout_weight="0.9"
                 android:textStyle="bold"
                 android:textSize="@dimen/text_normal"
@@ -68,7 +66,6 @@
                 android:id="@+id/cotizacion_nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/factura_card_nombre"
                 android:layout_weight="0.3"
                 android:textSize="@dimen/text_small"
                 android:textColor="@color/colorDarkGrayText"/>
@@ -80,7 +77,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/cotizacion_details"
-            android:text="@string/factura_card_fecha"
             android:textSize="@dimen/text_small"
             android:textColor="@color/colorLightGrayText"/>
 

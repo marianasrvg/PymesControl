@@ -6,22 +6,20 @@ import android.os.Parcelable;
 import java.util.Date;
 
 public class Cotizacion implements Parcelable {
-    int id;
-    String titulo, nombre;
+    String id, folio, titulo, nombre;
     Date fecha;
 
-    public Cotizacion() {
-    }
-
-    public Cotizacion(int id, String titulo, String nombre, Date fecha) {
+    public Cotizacion(String id, String folio, String titulo, String nombre, Date fecha) {
         this.id = id;
+        this.folio = folio;
         this.titulo = titulo;
         this.nombre = nombre;
         this.fecha = fecha;
     }
 
     protected Cotizacion(Parcel in) {
-        id = in.readInt();
+        id = in.readString();
+        folio = in.readString();
         titulo = in.readString();
         nombre = in.readString();
     }
@@ -38,11 +36,11 @@ public class Cotizacion implements Parcelable {
         }
     };
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -70,10 +68,18 @@ public class Cotizacion implements Parcelable {
         this.fecha = fecha;
     }
 
+    public void setFolio(String folio) {
+        this.folio = folio;
+    }
+    public String getFolio() {
+        return folio;
+    }
+
     @Override
     public String toString() {
         return "Cotizacion{" +
                 "id=" + id +
+                ", folio='" + folio + '\'' +
                 ", titulo='" + titulo + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", fecha=" + fecha +
@@ -87,7 +93,8 @@ public class Cotizacion implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(id);
+        parcel.writeString(id);
+        parcel.writeString(folio);
         parcel.writeString(titulo);
         parcel.writeString(nombre);
     }

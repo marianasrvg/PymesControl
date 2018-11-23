@@ -26,27 +26,24 @@
             android:paddingBottom="@dimen/factura_card_padding_top_title">
 
             <TextView
-                android:id="@+id/p_s_title"
+                android:id="@+id/p_s_codigo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nike 0592"
                 android:textStyle="bold"
                 android:layout_weight="0.05"
                 android:textSize="@dimen/text_normal"/>
 
             <TextView
-                android:id="@+id/p_s_description"
+                android:id="@+id/p_s_descripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tennis Nike whatever"
                 android:layout_weight="0.05"
                 android:textSize="@dimen/text_small"/>
 
             <TextView
-                android:id="@+id/p_s_price"
+                android:id="@+id/p_s_precio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$11.06"
                 android:layout_weight="0.9"
                 android:textSize="@dimen/text_small"/>
         </LinearLayout>

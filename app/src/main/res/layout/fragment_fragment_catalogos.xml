@@ -15,11 +15,13 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.design.widget.TabLayout
+            style="@style/AppTabLayout"
+            app:tabTextAppearance="@style/AppTabTextAppearance"
             android:id="@+id/tabs_catalogos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabGravity="fill"
-            app:tabMode="fixed"></android.support.design.widget.TabLayout>
+            app:tabMode="fixed"/>
 
     </android.support.design.widget.AppBarLayout>
 

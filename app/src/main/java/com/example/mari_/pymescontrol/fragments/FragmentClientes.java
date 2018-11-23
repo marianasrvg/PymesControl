@@ -4,6 +4,8 @@ package com.example.mari_.pymescontrol.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -26,12 +28,12 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class FragmentClientes extends Fragment {
-    RecyclerView recyclerView;
-    ArrayList<Cliente> clienteArrayList;
-    AdapterCliente adapterCliente;
-
+    private RecyclerView recyclerView;
+    private ArrayList<Cliente> clienteArrayList;
+    private AdapterCliente adapterCliente;
+    private SwipeRefreshLayout swipeRefresh;
     public FragmentClientes() {
-        // Required empty public constructor
+
     }
 
 
@@ -41,6 +43,7 @@ public class FragmentClientes extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_clientes, container, false);
         recyclerView = rootView.findViewById(R.id.fragment_cliente);
+        swipeRefresh = rootView.findViewById(R.id.fragment_cliente_refresher);
         return rootView;
     }
 
@@ -51,9 +54,33 @@ public class FragmentClientes extends Fragment {
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
-
         clienteArrayList = new ArrayList<>();
+        adapterCliente = new AdapterCliente(clienteArrayList, getActivity(), Constant.FRAGMENT_CLIENTE);
+        recyclerView.setAdapter(adapterCliente);
+        swipeRefresh.setColorSchemeColors(ContextCompat.getColor(getContext(),R.color.colorLightBlue));
+        swipeRefresh.setRefreshing(true);
+        loadData();
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadData();
+            }
+        });
+    }
 
+    private Cliente createCliente(JSONObject jsonClient){
+        Cliente cliente = null;
+        try{
+            String nombre = jsonClient.getString("nombre");
+            String rfc = jsonClient.getString("rfc");
+            String razonSocial = jsonClient.getString("nombre");
+            return new Cliente(nombre, rfc, razonSocial);
+        }catch(Exception e){
+            return null;
+        }
+    }
+    private void loadData(){
+        clienteArrayList = new ArrayList<>();
         GetCalls.clientes(getActivity(), new HttpRequestResponse() {
             @Override
             public void onResponse(String response) {
@@ -64,26 +91,11 @@ public class FragmentClientes extends Fragment {
                         JSONObject jsonClient = jsonObject.getJSONObject(i);
                         clienteArrayList.add(createCliente(jsonClient));
                     }
-                }catch(Exception e){
-                    //TODO something e
-                }
+                }catch(Exception e){}
+                adapterCliente = new AdapterCliente(clienteArrayList, getActivity(), Constant.FRAGMENT_CLIENTE);
+                recyclerView.setAdapter(adapterCliente);
+                swipeRefresh.setRefreshing(false);
             }
         });
-
-        adapterCliente = new AdapterCliente(clienteArrayList, getActivity(), Constant.FRAGMENT_CLIENTE);
-        recyclerView.setAdapter(adapterCliente);
-    }
-
-    private Cliente createCliente(JSONObject jsonClient){
-        Cliente cliente = null;
-        try{
-            String nombre = jsonClient.getString("nombre");
-            String rfc = jsonClient.getString("rfc");
-            String razonSocial = jsonClient.getString("nombre");
-            cliente = new Cliente(nombre, rfc, razonSocial);
-        }catch(Exception e){
-            //TODO something e
-        }
-        return cliente;
     }
 }
