@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".dialogs.DialogProductosServicios"></activity>
+        <activity android:name=".ActivityPdf"></activity>
     </application>
 
 </manifest>
