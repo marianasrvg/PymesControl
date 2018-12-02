@@ -9,20 +9,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mari_.pymescontrol.R;
-import com.example.mari_.pymescontrol.beans.ProductoServicio;
+import com.example.mari_.pymescontrol.beans.Cliente;
 import com.example.mari_.pymescontrol.tools.GetCalls;
 import com.example.mari_.pymescontrol.tools.HttpRequestResponse;
 
 import org.json.JSONObject;
 
-public class DialogProductosServicios extends Dialog implements View.OnClickListener {
+public class DialogClientes extends Dialog implements View.OnClickListener {
     private Activity activity;
     private Dialog d;
     private ImageView closeBtn;
 
-    TextView codigo, descripcion, unidadMedida, sat, precioSI, impuestos, precioN;
+    TextView id, nombre, razon, rfc, estado, ciudad, telefono;
 
-    public DialogProductosServicios(Activity activity){
+    public DialogClientes(Activity activity){
         super(activity);
         this.activity = activity;
     }
@@ -32,18 +32,18 @@ public class DialogProductosServicios extends Dialog implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.dialog_productos_servicios);
+        setContentView(R.layout.dialog_clientes);
         d = this;
         setCancelable(false);
 
-        closeBtn = findViewById(R.id.dps_close);
-        codigo = findViewById(R.id.dps_codigoT);
-        descripcion = findViewById(R.id.dps_descripcionT);
-        unidadMedida = findViewById(R.id.dps_unidadmedidaT);
-        sat = findViewById(R.id.dps_clavesatT);
-        precioSI = findViewById(R.id.dps_preciosiT);
-        impuestos = findViewById(R.id.dps_impuestosT);
-        precioN = findViewById(R.id.dps_precioT);
+        closeBtn = findViewById(R.id.dclientes_close);
+        id = findViewById(R.id.dclientes_idT);
+        nombre = findViewById(R.id.dclientes_nombreT);
+        razon = findViewById(R.id.dclientes_razonT);
+        rfc = findViewById(R.id.dclientes_rfcT);
+        estado = findViewById(R.id.dclientes_estado);
+        ciudad = findViewById(R.id.dclientes_ciudadT);
+        telefono = findViewById(R.id.dclientes_telefonoT);
 
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,22 +58,22 @@ public class DialogProductosServicios extends Dialog implements View.OnClickList
 
     }
 
-    public void loadData(ProductoServicio productoServicio){
+    public void loadData(Cliente cliente){
         GetCalls.producto(activity, new HttpRequestResponse() {
             @Override
             public void onResponse(String response) {
                 if(response == "false") return;
                 try{
                     JSONObject jsonObject = new JSONObject(response);
-                    codigo.setText(jsonObject.getString("codigo"));
-                    descripcion.setText(jsonObject.getString("descripcion"));
-                    unidadMedida.setText(jsonObject.getString("unidad"));
-                    sat.setText(jsonObject.getString("claveSAT"));
-                    //precioSI.setText(jsonObject.getString("total"));
-                    //impuestos.setText(jsonObject.getString("total"));
-                    precioN.setText(jsonObject.getString("total"));
+                    id.setText(jsonObject.getString("id"));
+                    nombre.setText(jsonObject.getString("nombre"));
+                    razon.setText(jsonObject.getString("razon"));
+                    rfc.setText(jsonObject.getString("rfc"));
+                    estado.setText(jsonObject.getString("estado"));
+                    ciudad.setText(jsonObject.getString("ciudad"));
+                    telefono.setText(jsonObject.getString("telefono"));
                 }catch (Exception e){}
             }
-        }, Integer.parseInt(productoServicio.getId()));
+        }, Integer.parseInt(cliente.getId()));
     }
 }

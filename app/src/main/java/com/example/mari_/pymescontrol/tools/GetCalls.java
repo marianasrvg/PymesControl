@@ -32,7 +32,7 @@ public class GetCalls {
     }
 
     public static void producto(Context context, HttpRequestResponse requestResponse, int  productoId){
-        HttpRequest.get(context, "http://api.pymescontrol.com/producto"+productoId, requestResponse);
+        HttpRequest.get(context, "http://api.pymescontrol.com/producto/"+productoId, requestResponse);
     }
 
     public static void bancos(Context context, HttpRequestResponse requestResponse){

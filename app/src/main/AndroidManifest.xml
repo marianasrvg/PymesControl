@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".dialogs.DialogProductosServicios"></activity>
+        <activity android:name=".dialogs.DialogProductosServicios" />
+        <activity android:name=".ActivityPdf" />
+        <activity android:name=".dialogs.DialogClientes"></activity>
     </application>
 
 </manifest>

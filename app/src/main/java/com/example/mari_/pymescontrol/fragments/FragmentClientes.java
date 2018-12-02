@@ -71,10 +71,11 @@ public class FragmentClientes extends Fragment {
     private Cliente createCliente(JSONObject jsonClient){
         Cliente cliente = null;
         try{
+            String id = jsonClient.getString("id");
             String nombre = jsonClient.getString("nombre");
             String rfc = jsonClient.getString("rfc");
             String razonSocial = jsonClient.getString("nombre");
-            return new Cliente(nombre, rfc, razonSocial);
+            return new Cliente(id, nombre, rfc, razonSocial);
         }catch(Exception e){
             return null;
         }

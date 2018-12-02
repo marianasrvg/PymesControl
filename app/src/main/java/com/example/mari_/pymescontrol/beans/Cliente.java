@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Cliente implements Parcelable {
-    String nombre, rfc, razonSocial;
+    String id, nombre, rfc, razonSocial;
 
     public Cliente(String nombre, String rfc, String razonSocial) {
         this.nombre = nombre;
@@ -18,6 +18,13 @@ public class Cliente implements Parcelable {
         razonSocial = in.readString();
     }
 
+    public Cliente(String id, String nombre, String rfc, String razonSocial) {
+        this.id = id;
+        this.nombre = nombre;
+        this.rfc = rfc;
+        this.razonSocial = razonSocial;
+    }
+
     public static final Creator<Cliente> CREATOR = new Creator<Cliente>() {
         @Override
         public Cliente createFromParcel(Parcel in) {
@@ -29,6 +36,14 @@ public class Cliente implements Parcelable {
             return new Cliente[size];
         }
     };
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;

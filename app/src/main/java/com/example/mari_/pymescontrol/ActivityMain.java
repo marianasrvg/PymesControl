@@ -47,16 +47,19 @@ public class ActivityMain extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.nav_facturas:
                         getSupportActionBar().setTitle(R.string.nav_facturas);
+                        getSupportActionBar().setElevation(3);
                         setFragment(fragmentFacturas);
                         return true;
 
                     case R.id.nav_cotizaciones:
                         getSupportActionBar().setTitle(R.string.nav_cotizaciones);
+                        getSupportActionBar().setElevation(3);
                         setFragment(fragmentCotizaciones);
                         return true;
 
                     case R.id.nav_catalogos:
                         getSupportActionBar().setTitle(R.string.nav_catalogos);
+                        getSupportActionBar().setElevation(0);
                         setFragment(fragmentCatalogos);
                         return true;
 

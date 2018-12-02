@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +31,7 @@ public class FragmentCuentasBancarias extends Fragment {
     RecyclerView recyclerView;
     ArrayList<CuentaBancaria> cuentaBancarias;
     AdapterCuentasBancarias adapterCuentasBancarias;
-
+    private SwipeRefreshLayout swipeRefresh;
     public FragmentCuentasBancarias() {
         // Required empty public constructor
     }
@@ -41,6 +43,7 @@ public class FragmentCuentasBancarias extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_cuentas_bancarias, container, false);
         recyclerView = rootView.findViewById(R.id.fragment_cuenta_bancarias);
+        swipeRefresh = rootView.findViewById(R.id.fragment_cuenta_bancaria_refresher);
         return  rootView;
     }
 
@@ -51,27 +54,19 @@ public class FragmentCuentasBancarias extends Fragment {
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
-
         cuentaBancarias = new ArrayList<>();
-
-        GetCalls.bancos(getActivity(), new HttpRequestResponse() {
+        adapterCuentasBancarias = new AdapterCuentasBancarias(cuentaBancarias, getActivity(), Constant.FRAGMENT_CUENTA_BANCARIA);
+        recyclerView.setAdapter(adapterCuentasBancarias);
+        swipeRefresh.setColorSchemeColors(ContextCompat.getColor(getContext(),R.color.colorLightBlue));
+        swipeRefresh.setRefreshing(true);
+        loadData();
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
-            public void onResponse(String response) {
-                if(response == "false") return;
-                try{
-                    JSONArray jsonObject = new JSONArray(response);
-                    for(int i = 0; i < jsonObject.length(); i++){
-                        JSONObject jsonCuentas = jsonObject.getJSONObject(i);
-                        cuentaBancarias.add(createCuentaBancaria(jsonCuentas));
-                    }
-                }catch (Exception e) {
-                    //TODO something here
-                }
+            public void onRefresh() {
+                loadData();
             }
         });
 
-        adapterCuentasBancarias = new AdapterCuentasBancarias(cuentaBancarias, getActivity(), Constant.FRAGMENT_CUENTA_BANCARIA);
-        recyclerView.setAdapter(adapterCuentasBancarias);
     }
 
     private CuentaBancaria createCuentaBancaria(JSONObject jsonCuentas){
@@ -85,5 +80,27 @@ public class FragmentCuentasBancarias extends Fragment {
             //TODO something here
         }
         return cuentaBancaria;
+    }
+
+    private void loadData(){
+        cuentaBancarias = new ArrayList<>();
+        GetCalls.bancos(getActivity(), new HttpRequestResponse() {
+            @Override
+            public void onResponse(String response) {
+                if(response == "false") return;
+                try{
+                    JSONArray jsonObject = new JSONArray(response);
+                    for(int i = 0; i < jsonObject.length(); i++){
+                        JSONObject jsonCuentas = jsonObject.getJSONObject(i);
+                        cuentaBancarias.add(createCuentaBancaria(jsonCuentas));
+                    }
+                }catch (Exception e) {
+                    //TODO something here
+                }
+                adapterCuentasBancarias = new AdapterCuentasBancarias(cuentaBancarias, getActivity(), Constant.FRAGMENT_CUENTA_BANCARIA);
+                recyclerView.setAdapter(adapterCuentasBancarias);
+                swipeRefresh.setRefreshing(false);
+            }
+        });
     }
 }

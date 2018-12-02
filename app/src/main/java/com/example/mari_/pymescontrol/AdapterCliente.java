@@ -1,14 +1,16 @@
 package com.example.mari_.pymescontrol;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.mari_.pymescontrol.beans.Cliente;
-
+import com.example.mari_.pymescontrol.dialogs.DialogClientes;
 import java.util.ArrayList;
 
 
@@ -32,10 +34,18 @@ public class AdapterCliente extends RecyclerView.Adapter<AdapterCliente.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.cNombre.setText(clienteArrayList.get(holder.getAdapterPosition()).getNombre());
         holder.cRfc.setText(clienteArrayList.get(holder.getAdapterPosition()).getRfc());
         holder.cRazonSocial.setText(clienteArrayList.get(holder.getAdapterPosition()).getRazonSocial());
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogClientes dialogClientes = new DialogClientes((Activity) view.getContext());
+                dialogClientes.loadData(clienteArrayList.get(position));
+                dialogClientes.show();
+            }
+        });
     }
 
     @Override
@@ -47,9 +57,11 @@ public class AdapterCliente extends RecyclerView.Adapter<AdapterCliente.ViewHold
         TextView cNombre;
         TextView cRfc;
         TextView cRazonSocial;
+        RelativeLayout relativeLayout;
 
         ViewHolder(View v){
             super(v);
+            relativeLayout = v.findViewById(R.id.clientes_item_layout);
             cNombre = v.findViewById(R.id.clientes_name);
             cRfc = v.findViewById(R.id.clientes_rfc);
             cRazonSocial = v.findViewById(R.id.clientes_razon_social);

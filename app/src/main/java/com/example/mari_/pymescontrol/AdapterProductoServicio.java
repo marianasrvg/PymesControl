@@ -62,7 +62,7 @@ public class AdapterProductoServicio extends RecyclerView.Adapter<AdapterProduct
 
         ViewHolder(View v){
             super(v);
-            mEventLayout = (RelativeLayout) v.findViewById(R.id.p_s_item_layout);
+            mEventLayout = v.findViewById(R.id.p_s_item_layout);
             psCodigo = v.findViewById(R.id.p_s_codigo);
             psDescripcion = v.findViewById(R.id.p_s_descripcion);
             psPrecio = v.findViewById(R.id.p_s_precio);
