@@ -27,43 +27,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2e6a2f3-004c-4944-b2e2-98da6a085327" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityPdf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/tools/PostCalls.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/cycle7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/shaketext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_pdf.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/app_bar_pdf_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskJars.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PymesControl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PymesControl.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityLogIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityLogIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterCotizaciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterCotizaciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterFacturas.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterFacturas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterProductoServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterProductoServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogClientes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogProductosServicios.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogProductosServicios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityPdf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityPdf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogSend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/tools/GetCalls.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/tools/GetCalls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/tools/HttpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/tools/HttpRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_log_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_productos_servicios.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_productos_servicios.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_send.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_send.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/app_bar_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/app_bar_simple_menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -98,34 +63,44 @@
       <file leaf-file-name="DialogSend.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogSend.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
+            <state relative-caret-position="680">
+              <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
               <folding>
-                <element signature="e#2467#2814#0" expanded="true" />
-                <element signature="e#2813#2814#0" expanded="true" />
+                <element signature="e#2515#2915#0" expanded="true" />
+                <element signature="e#2914#2915#0" expanded="true" />
+                <element signature="e#3307#3707#0" expanded="true" />
+                <element signature="e#3706#3707#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetCalls.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/tools/GetCalls.java">
+      <file leaf-file-name="AdapterCotizaciones.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterCotizaciones.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+            <state relative-caret-position="267">
+              <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdapterProductoServicio.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterProductoServicio.java">
+      <file leaf-file-name="AdapterFacturas.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterFacturas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="185">
+              <caret line="91" column="11" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="91" selection-end-column="11" />
               <folding>
-                <element signature="e#1712#2096#0" expanded="true" />
-                <element signature="e#2095#2096#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityPdf.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityPdf.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="83" column="71" selection-start-line="83" selection-start-column="71" selection-end-line="83" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -143,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DialogClientes.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DialogClientes.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogClientes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="83" column="59" selection-start-line="83" selection-start-column="59" selection-end-line="83" selection-end-column="59" />
+            <state relative-caret-position="142">
+              <caret line="74" column="21" lean-forward="true" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
               <folding>
                 <element signature="e#2056#3251#0" expanded="true" />
                 <element signature="e#3250#3251#0" expanded="true" />
@@ -164,18 +139,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-283">
               <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dialog_send.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_send.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -220,6 +183,7 @@
       <find>GetC</find>
       <find>createC</find>
       <find>estado</find>
+      <find>Acti</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2496,10 +2460,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_pdf.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityPdf.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterFacturas.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterCotizaciones.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogSend.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/tools/PostCalls.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/tools/GetCalls.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterProductoServicio.java" />
@@ -2507,6 +2469,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogProductosServicios.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterCliente.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogClientes.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogSend.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityPdf.java" />
       </list>
     </option>
   </component>
@@ -2897,37 +2861,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityPdf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="83" column="17" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterCotizaciones.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/tools/PostCalls.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogSend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
-          <folding>
-            <element signature="e#2467#2814#0" expanded="true" />
-            <element signature="e#2813#2814#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2957,17 +2896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterFacturas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding>
-            <element signature="e#2396#2426#0" expanded="true" />
-            <element signature="e#2661#2693#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3018,12 +2946,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogClientes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="83" column="59" selection-start-line="83" selection-start-column="59" selection-end-line="83" selection-end-column="59" />
+        <state relative-caret-position="142">
+          <caret line="74" column="21" lean-forward="true" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
           <folding>
             <element signature="e#2056#3251#0" expanded="true" />
             <element signature="e#3250#3251#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/dialogs/DialogSend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="61" column="33" lean-forward="true" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+          <folding>
+            <element signature="e#2515#2915#0" expanded="true" />
+            <element signature="e#2914#2915#0" expanded="true" />
+            <element signature="e#3307#3707#0" expanded="true" />
+            <element signature="e#3706#3707#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/ActivityPdf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="83" column="71" selection-start-line="83" selection-start-column="71" selection-end-line="83" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterFacturas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="91" column="11" lean-forward="true" selection-start-line="83" selection-start-column="8" selection-end-line="91" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/mari_/pymescontrol/AdapterCotizaciones.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
         </state>
       </provider>
     </entry>

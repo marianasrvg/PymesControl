@@ -74,7 +74,19 @@ public class DialogSend extends Dialog implements View.OnClickListener {
                         }
                     });
                 }else if(action == 2){
-
+                    String cotizacionId = cotizacion.getId();
+                    String email = textCorreo.getText().toString();
+                    String mensaje = textMensaje.getText().toString();
+                    Log.e("http", cotizacionId+" "+email+" "+mensaje);
+                    PostCalls.sendFactura(activity, cotizacionId, 1, 2, email, 0, mensaje,new HttpRequestResponse() {
+                        @Override
+                        public void onResponse(String response) {
+                            Log.e("http", response);
+                            DialogSendResponse dialog = new DialogSendResponse(activity);
+                            dialog.show();
+                            dismiss();
+                        }
+                    });
                 }
             }
         });

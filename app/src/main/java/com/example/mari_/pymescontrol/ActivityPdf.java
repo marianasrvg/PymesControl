@@ -80,7 +80,9 @@ public class ActivityPdf extends AppCompatActivity {
                     Dialog dialogSend = new DialogSend(this, factura);
                     dialogSend.show();
                 }else if(tipo == 2){
-
+                    final Cotizacion cotizacion = getIntent().getParcelableExtra("cotizacion");
+                    Dialog dialogSend = new DialogSend(this, cotizacion);
+                    dialogSend.show();
                 }
         }
         return super.onOptionsItemSelected(item);
