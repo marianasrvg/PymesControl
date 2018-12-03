@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">PymesControl</string>
-    <string name="al_correo">Correo</string>
-    <string name="al_pwd">Contraseña</string>
-    <string name="al_ingresar">Ingresar</string>
-    <string name="al_leyenda">PymesControl 2018 - Sistema de facturación en línea v1.0.0</string>
+    <string name="login_incorrecto">Correo o contraseña incorrecto</string>
+    <string name="login_correo">Correo</string>
+    <string name="login_pwd">Contraseña</string>
+    <string name="login_ingresar">Ingresar</string>
+    <string name="login_leyenda">PymesControl 2018 - Sistema de facturación en línea v1.0.0</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="nav_facturas">Facturas</string>
@@ -15,5 +16,5 @@
     <string name="factura_card_timbrada">Timbrada</string>
     <string name="factura_card_notimbrada">No timbrada</string>
     <string name="app_bar_menu_logout">Logout</string>
-
+    <string name="app_bar_menu_enviar">Enviar</string>
 </resources>

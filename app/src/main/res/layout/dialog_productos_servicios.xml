@@ -81,34 +81,6 @@
             android:layout_height="wrap_content"
             android:text="-"/>
 
-        <TextView
-            android:id="@+id/dps_preciosi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-
-            android:text="Precio sin impuestos"/>
-
-        <TextView
-            android:id="@+id/dps_preciosiT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:text="-"/>
-
-        <TextView
-            android:id="@+id/dps_impuestos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-
-            android:text="Impuestos"/>
-
-        <TextView
-            android:id="@+id/dps_impuestosT"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="-"/>
 
         <TextView
             android:id="@+id/dps_precio"

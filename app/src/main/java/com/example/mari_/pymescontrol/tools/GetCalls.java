@@ -32,7 +32,7 @@ public class GetCalls {
     }
 
     public static void producto(Context context, HttpRequestResponse requestResponse, int  productoId){
-        HttpRequest.get(context, "http://api.pymescontrol.com/producto/"+productoId, requestResponse);
+        HttpRequest.get(context, "http://api.pymescontrol.com/productos/"+productoId, requestResponse);
     }
 
     public static void bancos(Context context, HttpRequestResponse requestResponse){
@@ -41,6 +41,12 @@ public class GetCalls {
 
     public static void banco(Context context, HttpRequestResponse requestResponse, int bancoId){
         HttpRequest.get(context, "http://api.pymescontrol.com/bancos/"+bancoId, requestResponse);
+    }
+    public static void facturaToken(Context context, HttpRequestResponse requestResponse, int facturaId){
+        HttpRequest.get(context, "http://api.pymescontrol.com/publicToken?tipo=1&id="+facturaId, requestResponse);
+    }
+    public static void cotizacionToken(Context context, HttpRequestResponse requestResponse, int cotizacionId){
+        HttpRequest.get(context, "http://api.pymescontrol.com/publicToken?tipo=2&id="+cotizacionId, requestResponse);
     }
 
 }

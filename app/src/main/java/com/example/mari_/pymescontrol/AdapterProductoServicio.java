@@ -41,8 +41,7 @@ public class AdapterProductoServicio extends RecyclerView.Adapter<AdapterProduct
         holder.mEventLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogProductosServicios dialogProductosServicios = new DialogProductosServicios((Activity) view.getContext());
-                dialogProductosServicios.loadData(productoServiciosList.get(position));
+                DialogProductosServicios dialogProductosServicios = new DialogProductosServicios((Activity) view.getContext(), productoServiciosList.get(position));
                 dialogProductosServicios.show();
             }
         });

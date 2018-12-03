@@ -2,10 +2,12 @@ package com.example.mari_.pymescontrol;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.mari_.pymescontrol.beans.Cotizacion;
@@ -16,17 +18,18 @@ import java.util.ArrayList;
 
 
 public class AdapterCotizaciones extends RecyclerView.Adapter<AdapterCotizaciones.ViewHolder> {
-    private ArrayList<Cotizacion> cotizacionArrayList;
+    private ArrayList<Cotizacion> cotizacionesArrayList;
     private Context context;
     private int fragment;
 
     public AdapterCotizaciones(int fragment, Context context, ArrayList<Cotizacion> cotizacionArrayList) {
-        this.cotizacionArrayList = cotizacionArrayList;
+        this.cotizacionesArrayList = cotizacionArrayList;
         this.context = context;
         this.fragment = fragment;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
+        private RelativeLayout myEventLayout;
         TextView cFolio;
         TextView cTitulo;
         TextView cNombre;
@@ -38,7 +41,9 @@ public class AdapterCotizaciones extends RecyclerView.Adapter<AdapterCotizacione
             cTitulo = v.findViewById(R.id.cotizacion_titulo);
             cNombre = v.findViewById(R.id.cotizacion_nombre);
             cFecha = v.findViewById(R.id.cotizacion_fecha);
+            myEventLayout = v.findViewById(R.id.cotizacion_item_layout);
         }
+
     }
 
     @Override
@@ -49,22 +54,27 @@ public class AdapterCotizaciones extends RecyclerView.Adapter<AdapterCotizacione
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.cFolio.setText(cotizacionArrayList.get(holder.getAdapterPosition()).getFolio());
-        holder.cTitulo.setText(cotizacionArrayList.get(holder.getAdapterPosition()).getTitulo());
-        holder.cNombre.setText(cotizacionArrayList.get(holder.getAdapterPosition()).getNombre());
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        holder.cFolio.setText(cotizacionesArrayList.get(position).getFolio());
+        holder.cTitulo.setText(cotizacionesArrayList.get(position).getTitulo());
+        holder.cNombre.setText(cotizacionesArrayList.get(position).getNombre());
         DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
-        String date = dateFormat.format(cotizacionArrayList.get(holder.getAdapterPosition()).getFecha());
+        String date = dateFormat.format(cotizacionesArrayList.get(position).getFecha());
         holder.cFecha.setText(date);
+
+        holder.myEventLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ActivityPdf.class);
+                intent.putExtra("tipo", 2);
+                intent.putExtra("cotizacion", cotizacionesArrayList.get(holder.getAdapterPosition()));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return cotizacionArrayList.size();
+        return cotizacionesArrayList.size();
     }
-
-
-
-
-
 }

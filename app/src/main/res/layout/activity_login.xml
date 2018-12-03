@@ -8,23 +8,32 @@
     android:orientation="vertical"
     android:background="@color/colorMediumGrayBackground"
     android:padding="20dp">
-    
+    <TextView
+        android:id="@+id/login_incorrecto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorLightGrayText"
+        android:visibility="gone"
+        android:layout_above="@id/login_correo"
+        android:textSize="@dimen/text_normal"
+        android:textAlignment="center"
+        android:layout_marginBottom="10dp"
+        android:text="@string/login_incorrecto"/>
     <EditText
-        android:id="@+id/log_in_correo"
+        android:id="@+id/login_correo"
         style="@style/input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/log_in_pswd"
-        android:hint="@string/al_correo"
+        android:layout_above="@id/login_pswd"
+        android:hint="@string/login_correo"
         android:inputType="textEmailAddress" />
-
     <EditText
-        android:id="@+id/log_in_pswd"
+        android:id="@+id/login_pswd"
         style="@style/input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:hint="@string/al_pwd"
+        android:hint="@string/login_pwd"
         android:inputType="textPassword"
         android:layout_marginTop="10dp" />
 
@@ -32,8 +41,8 @@
         android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/log_in_pswd"
-        android:text="@string/al_ingresar"
+        android:layout_below="@id/login_pswd"
+        android:text="@string/login_ingresar"
         android:textAllCaps="false"
         android:background="@color/colorLightBlue"
         android:textColor="@color/colorWhite"
@@ -41,11 +50,11 @@
         android:layout_marginTop="10dp"
         android:textStyle="bold"/>
     <TextView
-        android:id="@+id/log_in_leyenda"
+        android:id="@+id/login_leyenda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/al_leyenda"
+        android:text="@string/login_leyenda"
         android:textColor="@android:color/darker_gray"
         android:textSize="@dimen/am_d_leyenda"
         android:layout_centerHorizontal="true"

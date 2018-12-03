@@ -41,8 +41,7 @@ public class AdapterCliente extends RecyclerView.Adapter<AdapterCliente.ViewHold
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogClientes dialogClientes = new DialogClientes((Activity) view.getContext());
-                dialogClientes.loadData(clienteArrayList.get(position));
+                DialogClientes dialogClientes = new DialogClientes((Activity) view.getContext(),clienteArrayList.get(position));
                 dialogClientes.show();
             }
         });

@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HttpRequest {
+    public static String token = null;
     public static void get(Context context, String url, final HttpRequestResponse responseAction){
         RequestQueue queue = Volley.newRequestQueue(context);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -31,7 +32,62 @@ public class HttpRequest {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String>  params = new HashMap<String, String>();
-                params.put("Cookie", "token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjdWVudGFJZCI6IjEiLCJub21icmVzIjoiQWxhbiIsImFwZWxsaWRvcyI6IlBcdTAwZTlyZXoiLCJjdWVudGFUaXBvIjoiMSIsImVtcHJlc2FJZCI6IjEiLCJlbXByZXNhSWROYW1lIjoiYW51bm93IiwibGltaXQiOiIyMDE4LTExLTIzIDA3OjQwOjM1IiwiaXBVc3VhcmlvIjoiMTc3LjI0MC4xMDEuMTI2In0.ZS_Uypr-Ns-2jCGOBjAPZVdaOYLVBA6P7XRroTfQZbQ");
+                params.put("Cookie", "token="+token);
+                return params;
+            }
+        };
+        queue.add(stringRequest);
+    }
+    public static void postNoAuto(Context context, String url, final Map<String, String> params, final HttpRequestResponse responseAction){
+        RequestQueue queue = Volley.newRequestQueue(context);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        responseAction.onResponse(response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                responseAction.onResponse(null);
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("Content-Type", "application/x-www-form-urlencoded");
+                return params;
+            }
+            @Override
+            public Map<String, String> getParams(){
+                return params;
+            }
+        };
+        queue.add(stringRequest);
+    }
+    public static void postAuto(Context context, String url, final Map<String, String> params, final HttpRequestResponse responseAction){
+        RequestQueue queue = Volley.newRequestQueue(context);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        responseAction.onResponse(response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                responseAction.onResponse(null);
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("Cookie", "token="+token);
+                params.put("Content-Type", "application/x-www-form-urlencoded");
+                return params;
+            }
+            @Override
+            public Map<String, String> getParams(){
                 return params;
             }
         };

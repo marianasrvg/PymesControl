@@ -18,16 +18,19 @@
         android:orientation="vertical"
         android:padding="15dp">
         <RadioGroup
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <RadioButton
+                android:id="@+id/dialog_send_radio1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Enviar al correo del cliente"
                 android:buttonTint="@color/colorDarkBlue"
                 android:textColor="@color/colorDarkGrayText"/>
             <RadioButton
+                android:id="@+id/dialog_send_radio2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Enviar a otro correo"
@@ -35,13 +38,14 @@
                 android:textColor="@color/colorDarkGrayText"/>
         </RadioGroup>
         <EditText
+            android:id="@+id/dialog_send_correo"
             style="@style/input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Correo electronico"
-            android:visibility="gone" />
+            android:hint="Correo electronico"/>
         <EditText
+            android:id="@+id/dialog_send_mensaje"
             style="@style/textArea"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
@@ -49,10 +53,9 @@
             android:lines="4"
             android:hint="Mensaje"/>
         <Button
-            android:id="@+id/login_btn"
+            android:id="@+id/dialog_send_enviar_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/log_in_pswd"
             android:text="Enviar"
             android:textAllCaps="false"
             android:background="@color/colorLightBlue"
